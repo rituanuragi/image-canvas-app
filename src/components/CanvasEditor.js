@@ -1,6 +1,5 @@
 // components/CanvasEditor.js
-import React, { useEffect } from "react";
-import { fabric } from "fabric";
+import React from "react";
 
 const CanvasEditor = ({ fabricCanvas, imageUrl, canvasLayers, setCanvasLayers }) => {
   useEffect(() => {
