@@ -1,5 +1,6 @@
 // components/CanvasEditor.js
-import React from "react";
+import React, { useEffect } from "react";
+import { fabric } from "fabric";
 
 const CanvasEditor = ({ fabricCanvas, imageUrl, canvasLayers, setCanvasLayers }) => {
   useEffect(() => {
@@ -12,7 +13,7 @@ const CanvasEditor = ({ fabricCanvas, imageUrl, canvasLayers, setCanvasLayers })
     }
 
     const canvas = fabricCanvas.current;
-    canvas.clear(); // Clear previous content
+    canvas.clear(); 
 
     // Load the selected image as background
     fabric.Image.fromURL(imageUrl, (img) => {
@@ -21,7 +22,7 @@ const CanvasEditor = ({ fabricCanvas, imageUrl, canvasLayers, setCanvasLayers })
         originY: "top",
         scaleX: canvas.width / img.width,
         scaleY: canvas.height / img.height,
-        selectable: false // Make background not draggable
+        selectable: false 
       });
       canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
       setCanvasLayers([{ type: "image", url: imageUrl }]);
@@ -88,7 +89,7 @@ const CanvasEditor = ({ fabricCanvas, imageUrl, canvasLayers, setCanvasLayers })
   const handleDownload = () => {
     const canvas = fabricCanvas.current;
 
-    // Remove active object border before export
+    
     canvas.discardActiveObject();
     canvas.renderAll();
 
