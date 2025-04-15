@@ -1,6 +1,6 @@
 // App.js
-import React, { useState, useRef, useEffect } from "react";
-import { fabric } from "fabric";
+import React, { useState, useRef } from "react";
+
 import "./styles/App.css";
 
 import SearchBar from "./components/SearchBar";
