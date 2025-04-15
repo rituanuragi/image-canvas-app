@@ -1,0 +1,1 @@
+export const PIXABAY_API_KEY = "49737076-d56a5e713361f24a6dad9ca4a";
